@@ -1,8 +1,31 @@
 <div class="row">
-  <figure id="audioplayer">
-    <audio class="customPlayer" controls (click)="toggleAudio()">
-      <source src="{{audioSource}}" type="audio/mp3" />
-      Browser not supported
-    </audio>
-  </figure>
+  <audio #audioPlayer (timeupdate)="update()">
+    <source src="{{audioSource}}" type="audio/mp3" />
+    Browser not supported
+  </audio>
+
+  <button #control class="control" (click)="play()">Play</button>
+
+  <span #volume>
+    <a class="stick1" (click)="volume(0)"></a>
+    <a class="stick2" (click)="volume(0.3)"></a>
+    <a class="stick3" (click)="volume(0.5)"></a>
+    <a class="stick4" (click)="volume(0.7)"></a>
+    <a class="stick5" (click)="volume(1)"></a>
+  </span>
+
+  <div class="slidecontainer">
+    <input type="range" min="1" max="100" value="50" class="slider" #myRange>
+  </div>
+  <!--<div #progressBarControl>
+      <div #progressBar>Pas de lecture</div>
+  </div>
+  style="width:25%"
+  -->
+
+  <div class="w3-light-grey w3-round-xlarge">
+    <div class="w3-container w3-blue w3-round-xlarge" #progressBar >Pas de lecture</div>
+  </div>
+
+
 </div>

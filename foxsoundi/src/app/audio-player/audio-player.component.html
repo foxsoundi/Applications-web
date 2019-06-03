@@ -4,18 +4,14 @@
     Browser not supported
   </audio>
 
-  <button #control class="control" (click)="play()">Play</button>
-
-  <span #volume>
-    <a class="stick1" (click)="volume(0)"></a>
-    <a class="stick2" (click)="volume(0.3)"></a>
-    <a class="stick3" (click)="volume(0.5)"></a>
-    <a class="stick4" (click)="volume(0.7)"></a>
-    <a class="stick5" (click)="volume(1)"></a>
-  </span>
+  <div>
+    <button class="control">Previous</button>
+    <button #control class="control" (click)="play()">Play</button>
+    <button class="control">Next</button>
+  </div>
 
   <div class="slidecontainer">
-    <input type="range" min="1" max="100" value="50" class="slider" #myRange>
+    <input type="range" min="1" max="100" value="100" class="slider" #myRange>
   </div>
   <!--<div #progressBarControl>
       <div #progressBar>Pas de lecture</div>

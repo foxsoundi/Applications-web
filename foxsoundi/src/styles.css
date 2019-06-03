@@ -14,15 +14,17 @@ html, body {
   min-height: 90vh;
   width: 10%;
   float: left;
+  background-color: #333333;
   border-right: 1px solid darkgray;
   left: 0;
   top: 0;
 }
 
 .right-panel {
-  min-height: 90vh;
+
   width: 90%;
   float: left;
+  max-height: 90vh;
   overflow-y: scroll;
   right: 0;
   top: 0;
@@ -34,6 +36,7 @@ html, body {
   position: fixed;
   left: 0;
   bottom: 0;
+  background-color: #333333;
   border-top: 1px solid darkgray;
 }
 

@@ -59,4 +59,5 @@ export class AudioPlayerComponent implements OnInit {
     progress.style.width = percent + '%';
     progress.textContent = percent + '%';
   }
+
 }

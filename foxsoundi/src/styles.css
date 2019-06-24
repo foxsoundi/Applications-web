@@ -4,6 +4,7 @@ html, body {
   background-color: #333333;
   overflow-x: hidden;
   overflow-y: hidden;
+  color: #dddddd;
 }
 
 * { box-sizing: border-box }

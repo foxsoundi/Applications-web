@@ -1,4 +1,5 @@
-import {Component, OnInit, Injectable} from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { SpotifyService } from '../spotify.service';
 
 @Component({
   selector: 'app-mid-panel',
@@ -7,9 +8,14 @@ import {Component, OnInit, Injectable} from '@angular/core';
 })
 export class MidPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+
+    console.log('Il est appelé');
+    const genre = this.spotifyService.getGenre('https://foxsoundiapi.azurewebsites.net/v1/genres');
+    console.log(genre);
+
   }
 
 

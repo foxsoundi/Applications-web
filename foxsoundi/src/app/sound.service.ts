@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -7,8 +7,8 @@ import 'rxjs/add/operator/map';
 })
 export class SoundService {
 
-  private _url:string = "data/data.json";
-  constructor (private _http: Http) {}
+  private _url = "data/data.json";
+  constructor(private _http: HttpClientModule) {}
 
   getSounds() {
   }

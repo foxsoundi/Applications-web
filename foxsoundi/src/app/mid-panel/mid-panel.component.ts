@@ -13,9 +13,8 @@ export class MidPanelComponent implements OnInit {
   ngOnInit() {
 
     console.log('Il est appelé');
-    const genre = this.spotifyService.getGenre('https://foxsoundiapi.azurewebsites.net/v1/genres');
-    console.log(genre);
-
+    //const genre = this.spotifyService.getGenre('https://localhost:5001/v1/music/genre');
+    //console.log(genre);
   }
 
 

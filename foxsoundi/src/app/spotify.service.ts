@@ -11,18 +11,27 @@ import {Genre} from './lib/genre';
 
 export class SpotifyService {
 
-  constructor(private http: HttpClient) { }
+  genresRawRoot: GenresRawRoot;
+  constructor(private http: HttpClient) { 
+    this.getGenre('http://localhost:5000/v1/music/genre');
+}
 
-  getGenre(url: string): Observable<GenresRawRoot> {
-    return this.http.get<GenresRawRoot>(url)
-      .pipe(
-        map(grr => {
-          console.log(grr);
-          return grr;
-        }),
-        retry(1),
-        catchError(this.handleError)
+  getGenre(url: string): void {
+    this.http.get<GenresRawRoot>(url)
+    
+      .subscribe(grr => {
+        this.genresRawRoot = grr;
+      },
+      console.error
       );
+      // .pipe(
+      //   map(grr => {
+      //     this.genresRawRoot = grr;
+      //     return grr;
+      //   }),
+      //   retry(1),
+      //   catchError(this.handleError)
+      // );
   }
 
   // Error handling

@@ -15,7 +15,7 @@
 
   export interface GenresRaw {
     href: string;
-    GenreRaws: GenreRaw[];
+    items: GenreRaw[];
     limit: number;
     next: string;
     offset: number;
@@ -24,6 +24,6 @@
   }
 
   export interface GenresRawRoot {
-    GenresRaw: GenresRaw;
+    categories: GenresRaw;
   }
 

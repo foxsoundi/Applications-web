@@ -1,8 +1,8 @@
 
 <!-- <app-grid></app-grid> -->
-<li *ngFor="let genreRaw of spotifyService.genresRawRoot.categories.items">
-    {{genreRaw}}
-</li>
+<div class="column img-grid" *ngFor="let genreRaw of spotifyService.genresRawRoot.categories.items">
+    <img [attr.src]="genreRaw.icons[0].url" class="hover-shadow cursor">
+</div>
 <div class="column img-grid">
     <img src="assets/img/a1.jpg" class="hover-shadow cursor">
 </div>

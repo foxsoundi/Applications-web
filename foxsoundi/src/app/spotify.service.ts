@@ -13,7 +13,7 @@ export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
   constructor(private http: HttpClient) { 
-    this.getGenre('http://localhost:5000/v1/music/genre');
+    this.getGenre('http://foxsoundi2.azurewebsites.net/v1/music/genre');
 }
 
   getGenre(url: string): void {

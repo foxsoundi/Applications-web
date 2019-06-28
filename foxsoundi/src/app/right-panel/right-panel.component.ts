@@ -8,15 +8,8 @@ import { SpotifyService } from '../spotify.service';
 })
 export class RightPanelComponent implements OnInit {
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(public spotifyService: SpotifyService) { }
 
-  ngOnInit() {
-
-    console.log('Il est appelé');
-    //const genre = this.spotifyService.getGenre('https://localhost:5001/v1/music/genre');
-    //console.log(genre);
-  }
-
-
+  ngOnInit() { }
 
 }

@@ -6,11 +6,11 @@ import {SpotifyService} from "../../spotify.service";
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
+
 export class GridComponent implements OnInit {
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(public spotifyService: SpotifyService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

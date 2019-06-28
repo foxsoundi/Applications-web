@@ -1,124 +1,15 @@
 <div class="row">
 
-  <div class="col-sm-3 grid-item">
+  <div class="col-sm-3 grid-item" *ngFor="let genreRaw of spotifyService.genresRawRoot.categories.items">
 
     <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
+      <img [attr.src]="genreRaw.icons[0].url" alt="">
     </div>
     <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
+      <a href="" [text]=genreRaw.name></a>
     </div>
 
   </div>
 
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
-
-  <div class="col-sm-3 grid-item">
-
-    <div class="grid-item-top">
-      <img src="assets/img/indie.jpg" alt="">
-    </div>
-    <div class="grid-item-bot">
-      <a href="">LibelleGenre or libelleAlbum</a>
-    </div>
-
-  </div>
 </div>
 

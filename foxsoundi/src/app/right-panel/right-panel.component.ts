@@ -2,11 +2,11 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { SpotifyService } from '../spotify.service';
 
 @Component({
-  selector: 'app-mid-panel',
-  templateUrl: './mid-panel.component.html',
-  styleUrls: ['./mid-panel.component.css']
+  selector: 'app-right-panel',
+  templateUrl: './right-panel.component.html',
+  styleUrls: ['./right-panel.component.css']
 })
-export class MidPanelComponent implements OnInit {
+export class RightPanelComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) { }
 

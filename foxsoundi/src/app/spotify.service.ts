@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import {retry, catchError, map} from 'rxjs/operators';
-import {GenresRawRoot, GenresRaw, GenreRaw} from './lib/genreRaw';
-import {Genre} from './lib/genre';
+import { throwError } from 'rxjs';
+import { GenresRawRoot } from './lib/genreRaw';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +11,7 @@ export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
   constructor(private http: HttpClient) { 
-    this.getGenre('http://localhost:5000/v1/music/genre');
+    this.getGenre('https://foxsoundi2.azurewebsites.net/v1/music/genre');
 }
 
   getGenre(url: string): void {

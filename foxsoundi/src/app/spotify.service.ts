@@ -10,26 +10,20 @@ import { GenresRawRoot } from './lib/genreRaw';
 export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
+  serverOK = false;
+
   constructor(private http: HttpClient) { 
     this.getGenre('https://foxsoundi2.azurewebsites.net/v1/music/genre');
+    this.serverIsOk('https://foxsoundi2.azurewebsites.net/ping');
 }
 
   getGenre(url: string): void {
     this.http.get<GenresRawRoot>(url)
-    
       .subscribe(grr => {
         this.genresRawRoot = grr;
       },
       console.error
       );
-      // .pipe(
-      //   map(grr => {
-      //     this.genresRawRoot = grr;
-      //     return grr;
-      //   }),
-      //   retry(1),
-      //   catchError(this.handleError)
-      // );
   }
 
   // Error handling
@@ -44,5 +38,15 @@ export class SpotifyService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
+  }
+
+  serverIsOk(url: string): void {
+    this.http.get<boolean>(url)
+      .subscribe(result => {
+          this.serverOK = result;
+        },
+        console.error
+      );
+    console.log(this.serverOK);
   }
 }

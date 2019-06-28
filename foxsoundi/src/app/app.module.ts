@@ -6,19 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AudioPlayerComponent } from './audio-player/audio-player.component';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
-import { MidPanelComponent } from './mid-panel/mid-panel.component';
+import { RightPanelComponent } from './right-panel/right-panel.component';
 import { SpotifyService } from './spotify.service';
-import { GridComponent } from './mid-panel/grid/grid.component';
-import { ListComponent } from './mid-panel/list/list.component';
+import { GridComponent } from './right-panel/grid/grid.component';
+import { ListComponent } from './right-panel/list/list.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AudioPlayerComponent,
     LeftPanelComponent,
-    MidPanelComponent,
+    RightPanelComponent,
     GridComponent,
-    ListComponent
+    ListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

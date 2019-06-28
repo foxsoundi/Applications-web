@@ -1,3 +1,39 @@
-html {
-  background-color: #333333;
+/* You can add global styles to this file, and also import other style files */
+
+html, body, * {
+  background-color: #333333 !important;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: #dddddd !important;
+}
+
+* { box-sizing: border-box }
+
+.cursor { cursor: pointer }
+
+.left-panel {
+  min-height: 100vh;
+  width: 10%;
+  float: left;
+  border-right: 1px solid darkgray;
+  left: 0;
+  top: 0;
+}
+
+.right-panel {
+  width: 90%;
+  float: left;
+  max-height: 100vh;
+  overflow-y: scroll;
+  right: 0;
+  top: 0;
+}
+
+.bottom-panel {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid darkgray;
 }

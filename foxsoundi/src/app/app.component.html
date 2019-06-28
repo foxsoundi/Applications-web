@@ -1,15 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="left-panel">
-  <app-left-panel></app-left-panel>
+<div *ngIf=!spotifyService.serverOK>
+  <div class="left-panel">
+    <app-left-panel></app-left-panel>
+  </div>
+
+  <div class="right-panel">
+    <app-right-panel></app-right-panel>
+  </div>
+
+  <div class="bottom-panel">
+    <app-audio-player></app-audio-player>
+  </div>
 </div>
 
-<div class="right-panel">
-  <app-right-panel></app-right-panel>
-</div>
-
-<div class="bottom-panel">
-  <app-audio-player></app-audio-player>
+<div *ngIf="spotifyService.serverOK">
+  <app-alert></app-alert>
 </div>
 
 <router-outlet></router-outlet>

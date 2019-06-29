@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { GenresRawRoot } from './lib/genreRaw';
+import {PlaylistsRawRoot} from './lib/playlistRaw';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,33 @@ import { GenresRawRoot } from './lib/genreRaw';
 export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
+  playlistsRawRoot: PlaylistsRawRoot;
   serverOK = false;
+  URI = 'https://foxsoundi2.azurewebsites.net';
 
-  constructor(private http: HttpClient) { 
-    this.getGenre('https://foxsoundi2.azurewebsites.net/v1/music/genre');
-    this.serverIsOk('https://foxsoundi2.azurewebsites.net/ping');
+  constructor(private http: HttpClient) {
+    this.getGenre();
+    this.serverIsOk();
+    this.getPlaylistOfGenre('rock');
 }
 
-  getGenre(url: string): void {
-    this.http.get<GenresRawRoot>(url)
-      .subscribe(grr => {
-        this.genresRawRoot = grr;
+  getGenre(): void {
+    this.http.get<GenresRawRoot>(this.URI + '/v1/music/genre')
+      .subscribe(result => {
+        this.genresRawRoot = result;
+        console.log(this.genresRawRoot);
       },
       console.error
+      );
+  }
+
+  getPlaylistOfGenre(idGenre: string): void {
+    this.http.get<PlaylistsRawRoot>(this.URI + '/v1/music/genre/' + idGenre + '/playlists')
+      .subscribe(result => {
+          this.playlistsRawRoot = result;
+          console.log(this.playlistsRawRoot);
+          },
+        console.error
       );
   }
 
@@ -40,13 +55,13 @@ export class SpotifyService {
     return throwError(errorMessage);
   }
 
-  serverIsOk(url: string): void {
-    this.http.get<boolean>(url)
+  serverIsOk(): void {
+    this.http.get<boolean>(this.URI + '/ping')
       .subscribe(result => {
           this.serverOK = result;
-        },
+          console.log(this.serverOK);
+          },
         console.error
       );
-    console.log(this.serverOK);
   }
 }

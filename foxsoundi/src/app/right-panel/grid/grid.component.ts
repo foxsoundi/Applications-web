@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SpotifyService} from "../../spotify.service";
+import { SpotifyService } from '../../spotify.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grid',
@@ -9,8 +10,12 @@ import {SpotifyService} from "../../spotify.service";
 
 export class GridComponent implements OnInit {
 
-  constructor(public spotifyService: SpotifyService) { }
+  constructor(public spotifyService: SpotifyService, public router: Router) { }
 
   ngOnInit() { }
+
+  handleClick() {
+    this.router.navigate(['/rightPanel/grid/playlist']);
+  }
 
 }

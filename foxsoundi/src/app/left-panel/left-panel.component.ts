@@ -8,19 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class LeftPanelComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit() { }
   logoMarque  = 'assets/img/foxsoundi.png';
 
+  ngOnInit() { }
 
-  loginModal() {
-  // Get the modal
-  var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
 
 }

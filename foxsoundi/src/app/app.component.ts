@@ -1,5 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
-import {SpotifyService} from "./spotify.service";
+import { Component, ElementRef, ViewChild} from '@angular/core';
+import { SpotifyService} from './spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +8,6 @@ import {SpotifyService} from "./spotify.service";
 })
 
 export class AppComponent {
-  constructor(public spotifyService: SpotifyService){
-    //if (spotifyService.genresRawRoot.categories.items)
-  }
+  constructor(public spotifyService: SpotifyService) { }
   title = 'foxsoundi';
 }

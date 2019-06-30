@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
-import { GenresRawRoot } from './lib/genreRaw';
-import { PlaylistsRawRoot } from './lib/playlistRaw';
-import { TracksRawRoot } from './lib/trackRaw';
+import { GenresRawRoot } from '../lib/genreRaw';
+import { PlaylistsRawRoot } from '../lib/playlistRaw';
+import { TracksRawRoot } from '../lib/trackRaw';
 
 @Injectable({
   providedIn: 'root'

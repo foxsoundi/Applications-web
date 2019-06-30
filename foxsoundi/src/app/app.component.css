@@ -21,7 +21,7 @@ html, body, * {
 }
 
 .right-panel {
-  width: 90%;
+  width: 90% ;
   float: left;
   max-height: 90vh;
   overflow-y: scroll;

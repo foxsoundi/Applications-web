@@ -1,3 +1,36 @@
+html, body, * {
+  background-color: #333333;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  color: #dddddd;
+}
+
+.left-panel {
+  min-height: 100vh;
+  width: 190px;
+  float: left;
+  border-right: 1px solid darkgray;
+  left: 0;
+  top: 0;
+}
+
+.right-panel {
+  float: left;
+  max-height: 90vh;
+  overflow-y: scroll;
+  right: 0;
+  top: 0;
+}
+
+.bottom-panel {
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid darkgray;
+}
+
 a {
   color: #dddddd !important;
 }
@@ -5,4 +38,5 @@ a {
 a:hover {
   font-weight: bold !important;
   text-decoration: none !important;
+  cursor: pointer !important;
 }

@@ -1,11 +1,10 @@
 <div class="row">
   <div class="col">
-    Musique total de la playlist : {{spotifyService.tracksRawRoot.total}}
-    <table class="table table-dark">
+    <table class="table table-dark table-hover">
       <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col">Titre</th>
+        <th scope="col">{{spotifyService.tracksRawRoot.total}}</th>
+        <th scope="col">{{spotifyService.tracksRawRoot.total > 1 ? "Titres" : "Titre"}}</th>
         <th scope="col">Artiste</th>
         <th scope="col">Album</th>
         <th scope="col">Durée</th>
@@ -13,10 +12,10 @@
       </thead>
       <tbody>
       <tr *ngFor="let trackRaw of spotifyService.tracksRawRoot.items">
-        <td><i class="material-icons">play_circle_outline</i></td>
+        <td><a [attr.href]="" class="material-icons">play_circle_outline</a></td>
         <td>{{trackRaw.track.name}} <i *ngIf="trackRaw.track.explicit" class='material-icons'>explicit</i></td>
-        <td><span *ngFor="let artist of trackRaw.track.artists ; index as i">{{artist.name}}{{trackRaw.track.artists.length == i + 1 ? "" : " & "}}</span></td>
-        <td>{{trackRaw.track.album.name}}</td>
+        <td><span *ngFor="let artist of trackRaw.track.artists ; index as i"><a [attr.href]="">{{artist.name}}</a>{{trackRaw.track.artists.length == i + 1 ? "" : " & "}}</span></td>
+        <td><a [attr.href]="">{{trackRaw.track.album.name}}</a></td>
         <td>{{trackRaw.track.duration_ms | date:'m'}}'</td>
       </tr>
       </tbody>

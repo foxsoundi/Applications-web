@@ -1,17 +1,31 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <img src="{{logoMarque}}" alt="">
+      <img src="{{logoMarque}}" alt="" class="float-center">
 
-      <input type="text" placeholder="Search..">
+      <div class="input-group input-group-sm mb-2">
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Rechercher">
+        <div class="input-group-append">
+          <a class="input-group-text material-icons" id="inputGroup-sizing-sm">search</a>
+        </div>
+      </div>
 
-      <ul>
-        <li><a href="../">Popular Albums</a></li>
-        <li><a href="../">Popular Genres</a></li>
-        <li><a href="../">Top 50 France</a></li>
+      <ul class="list-group list-group-flush mb-2">
+        <li class="list-group-item"><a [attr.href]="">Genre</a></li>
+        <li class="list-group-item"><a [attr.href]="">Top 50</a></li>
       </ul>
 
-      <button class="btn-success">Sign in</button> <button class="btn-secondary">Sign up</button>
+      <div class="btn-group btn-group-sm mb-2" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success">Connexion</button>
+        <button type="button" class="btn btn-secondary">Inscription</button>
+      </div>
+
+      <p class="h5 mb-2">Playlist<a class="material-icons" id="addPlaylist">playlist_add</a></p>
+
+      <ul class="list-group list-group-flush mb-2">
+        <li class="list-group-item"><a [attr.href]="">Playlist 1</a></li>
+        <li class="list-group-item"><a [attr.href]="">Playlist 2</a></li>
+      </ul>
 
     </div>
   </div>

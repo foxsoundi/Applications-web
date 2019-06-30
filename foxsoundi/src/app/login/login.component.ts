@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   logoMarque  = 'assets/img/foxsoundi.png';
 
-  constructor() { }
+  constructor(login: LoginService) { }
 
   ngOnInit() {
   }

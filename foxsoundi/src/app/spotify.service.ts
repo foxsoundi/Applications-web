@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { GenresRawRoot } from './lib/genreRaw';
-import {PlaylistsRawRoot} from './lib/playlistRaw';
+import { PlaylistsRawRoot } from './lib/playlistRaw';
+import { TracksRawRoot } from './lib/trackRaw';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
   playlistsRawRoot: PlaylistsRawRoot;
+  tracksRawRoot: TracksRawRoot;
   serverOK = false;
   URI = 'https://foxsoundi2.azurewebsites.net';
 
@@ -19,6 +21,7 @@ export class SpotifyService {
     this.getGenre();
     this.serverIsOk();
     this.getPlaylistOfGenre('rock');
+    this.getTrackOfPlaylist('37i9dQZF1DX8FwnYE6PRvL');
 }
 
   getGenre(): void {
@@ -41,18 +44,14 @@ export class SpotifyService {
       );
   }
 
-  // Error handling
-  handleError(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-    // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-    // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
+  getTrackOfPlaylist(idPlaylist: string): void {
+    this.http.get<TracksRawRoot>(this.URI + '/v1/music/playlist/' + idPlaylist + '/tracks')
+      .subscribe(result => {
+          this.tracksRawRoot = result;
+          console.log(this.playlistsRawRoot);
+        },
+        console.error
+      );
   }
 
   serverIsOk(): void {
@@ -63,5 +62,19 @@ export class SpotifyService {
           },
         console.error
       );
+  }
+
+  // Error handling
+  handleError(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Get client-side error
+      errorMessage = error.error.message;
+    } else {
+      // Get server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
   }
 }

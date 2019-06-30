@@ -15,7 +15,7 @@ export class RightPanelComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params): void => {
-      this.type = params.type == null ? E_DisplayType.grid : params.type ;
+      this.type = params.type == null ? E_DisplayType.list : params.type ;
       console.log(this.type);
     });
   }

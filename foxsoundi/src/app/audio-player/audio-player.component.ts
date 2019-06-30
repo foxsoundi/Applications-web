@@ -6,49 +6,50 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./audio-player.component.css']
 })
 export class AudioPlayerComponent implements OnInit {
-  audioSource = 'assets/audio/audio_dasha.mp3';
 
   constructor() { }
+  audioSource = 'assets/audio/audio_dasha.mp3';
+  volume = 70;
+
+  @ViewChild('audioPlayer') audioPlayer: ElementRef;
+  @ViewChild('audioControl') audioControl: ElementRef;
+  @ViewChild('audioProgressBar') audioProgressBar: ElementRef;
+  @ViewChild('audioVolumeSlide') audioVolumeSlide: ElementRef;
 
   ngOnInit() { }
-
-  @ViewChild('audioPlayer') audioplayer: ElementRef;
-  @ViewChild('control') audioControl: ElementRef;
-  @ViewChild('progressBar') audioProgressBar: ElementRef;
   /*toggleAudio() {
     this.audioplayer.nativeElement.play();
   }*/
 
   play() {
-    console.log(this.audioplayer);
-    const player = this.audioplayer.nativeElement;
+    const player = this.audioPlayer.nativeElement;
     const control = this.audioControl.nativeElement;
 
     if (player.paused) {
       player.play();
-      control.textContent = 'Pause';
+      control.textContent = 'play_arrow';
     } else {
       player.pause();
-      control.textContent = 'Play';
+      control.textContent = 'pause';
     }
   }
 
   resume() {
-    const player = this.audioplayer.nativeElement;
+    const player = this.audioPlayer.nativeElement;
 
     player.currentTime = 0;
     player.pause();
   }
 
-  volume(vol) {
-    const player = this.audioplayer.nativeElement;
+  volumeUpdate(vol) {
+    const player = this.audioPlayer.nativeElement;
 
     player.volume = vol;
   }
 
 
   update() {
-    const player = this.audioplayer.nativeElement;
+    const player = this.audioPlayer.nativeElement;
     const duration = player.duration;    // Durée totale
     const time     = player.currentTime; // Temps écoulé
     const fraction = time / duration;
@@ -57,7 +58,7 @@ export class AudioPlayerComponent implements OnInit {
     const progress = this.audioProgressBar.nativeElement;
 
     progress.style.width = percent + '%';
-    progress.textContent = percent + '%';
+    // progress.textContent = percent + '%';
   }
 
 }

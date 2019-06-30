@@ -1,28 +1,31 @@
 <div class="container">
   <div class="row">
-  <!--  <audio #audioPlayer (timeupdate)="update()">-->
-  <!--    <source src="{{audioSource}}" type="audio/mp3" />-->
-  <!--    Browser not supported-->
-  <!--  </audio>-->
+    <div class="col">
 
-  <!--  <div>-->
-  <!--    <button class="control">Previous</button>-->
-  <!--    <button #control class="control" (click)="play()">Play</button>-->
-  <!--    <button class="control">Next</button>-->
-  <!--  </div>-->
+      <audio #audioPlayer (timeupdate)="update()">
+        <source src="{{audioSource}}" type="audio/mp3" />
+        Browser not supported
+      </audio>
 
-  <!--  <div class="slidecontainer">-->
-  <!--    <input type="range" min="1" max="100" value="100" class="slider" #myRange>-->
-  <!--  </div>-->
-  <!--  &lt;!&ndash;<div #progressBarControl>-->
-  <!--      <div #progressBar>Pas de lecture</div>-->
-  <!--  </div>-->
-  <!--  style="width:25%"-->
-  <!--  &ndash;&gt;-->
+      <div>
+        <a class="material-icons">skip_previous</a>
+        <a #audioControl class="material-icons" (click)="play()">play_arrow</a>
+        <a class="material-icons">skip_next</a>
+      </div>
 
-  <!--  <div class="w3-light-grey w3-round-xlarge">-->
-  <!--    <div class="w3-container w3-blue w3-round-xlarge" #progressBar >Pas de lecture</div>-->
-  <!--  </div>-->
+      <div class="progress" style="height: 4px;">
+        <div #audioProgressBar class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
 
+      <div class="slidecontainer">
+        <i *ngIf="volume <= 0" class="material-icons">volume_mute</i>
+        <i *ngIf="volume > 0 && volume <= 50" class="material-icons">volume_down</i>
+        <i *ngIf="volume > 50" class="material-icons">volume_up</i>
+        <input #audioVolumeSlide type="range" min="0" max="100" value={{volume}} class="slider">
+
+  <!--      <i class="material-icons">volume_off</i>-->
+      </div>
+
+    </div>
   </div>
 </div>

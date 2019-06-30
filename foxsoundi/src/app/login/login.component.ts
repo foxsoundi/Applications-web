@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  logoMarque  = 'assets/img/foxsoundi.png';
+
   constructor() { }
 
   ngOnInit() {

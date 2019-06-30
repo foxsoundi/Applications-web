@@ -1,17 +1,29 @@
-<form class="" action="/action_page.php">
-  <div class="container">
-    <label for="uname"><b>Email</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+<form>
 
-    <label for="psw"><b>Mot de passe</b></label>
-    <input type="password" placeholder="******" name="psw" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-
-    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@example.com" required>
+    <small id="emailHelp" class="form-text text-muted">
+      Ne partagez jamais votre email avec n'importe qui.
+    </small>
   </div>
+
+  <label for="exampleInputPassword1">Mot de passe</label>
+  <div class="input-group mb-2">
+    <input type="password" class="form-control" id="exampleInputPassword1" aria-label="Small" aria-describedby="inputGroup-sizing" placeholder="**********">
+    <div class="input-group-append">
+      <a class="input-group-text material-icons text-black-50" id="inputGroup-sizing">visibility</a> <!-- _off -->
+    </div>
+  </div>
+  <!--<small class="form-text text-muted mb-2">
+    Votre mot de passe doit contenir plus de 8 caractères, un mélange de lettre et de chiffre ainsi que des caractères spéciaux.
+  </small>-->
+
+  <div class="form-check mb-2">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
+  </div>
+
+  <button type="submit" class="btn btn-success mb-2">Submit</button>
+
 </form>

@@ -8,7 +8,7 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(public spotifyService: SpotifyService) { }
+  constructor() { }
 
   ngOnInit() {
   }

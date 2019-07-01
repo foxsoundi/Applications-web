@@ -16,6 +16,10 @@ import { AlertComponent } from './alert/alert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SigninComponent } from './login/signin/signin.component';
 import { SignupComponent } from './login/signup/signup.component';
+import { AlbumComponent } from './right-panel/grid/album/album.component';
+import { PlaylistComponent } from './right-panel/grid/playlist/playlist.component';
+import { TrackComponent } from './right-panel/list/track/track.component';
+import { ArtistComponent } from './right-panel/list/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { SignupComponent } from './login/signup/signup.component';
     LoginComponent,
     AlertComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    AlbumComponent,
+    PlaylistComponent,
+    TrackComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

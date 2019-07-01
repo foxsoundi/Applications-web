@@ -14,8 +14,4 @@ export class GridComponent implements OnInit {
 
   ngOnInit() { }
 
-  handleClick(str: string) {
-    this.router.navigate(['/rightPanel/' + str]);
-  }
-
 }

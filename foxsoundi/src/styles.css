@@ -5,8 +5,28 @@ html, body, * {
   color: #dddddd;
 }
 
+a {
+  color: #dddddd !important;
+}
+
+a:hover {
+  font-weight: bold !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
 .left-panel {
-  min-height: 100vh;
+  height: calc(100vh - 65px);;
   width: 190px;
   float: left;
   border-right: 1px solid darkgray;
@@ -16,27 +36,18 @@ html, body, * {
 
 .right-panel {
   float: left;
-  max-height: 90vh;
+  width: calc(100% - 190px);
+  max-height: calc(100vh - 65px);;
   overflow-y: scroll;
   right: 0;
   top: 0;
 }
 
 .bottom-panel {
-  height: 10vh;
+  min-height: 65px;
   width: 100%;
   position: fixed;
   left: 0;
   bottom: 0;
   border-top: 1px solid darkgray;
-}
-
-a {
-  color: #dddddd !important;
-}
-
-a:hover {
-  font-weight: bold !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
 }

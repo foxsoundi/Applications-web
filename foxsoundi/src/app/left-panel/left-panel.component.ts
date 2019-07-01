@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SpotifyService} from "../services/spotify.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-left-panel',
@@ -6,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-panel.component.css']
 })
 export class LeftPanelComponent implements OnInit {
-
-  constructor() { }
   logoMarque  = 'assets/img/foxsoundi.png';
+
+  constructor(public spotifyService: SpotifyService, public router: Router) { }
 
   ngOnInit() { }
 
+  goAlbum() {
+    this.router.navigate(['/album']);
+  }
 
+  goSignin() {
+    this.router.navigate(['/signin']);
+  }
+
+  goSignup() {
+    this.router.navigate(['/signup']);
+  }
 }

@@ -1,19 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div *ngIf=!spotifyService.serverOK>
-<!--  <div class="left-panel">-->
-<!--    <app-left-panel></app-left-panel>-->
-<!--  </div>-->
+  <div class="left-panel">
+    <app-left-panel></app-left-panel>
+  </div>
 
-<!--  <div class="right-panel">-->
-<!--    <app-right-panel></app-right-panel>-->
-<!--  </div>-->
+  <div class="right-panel">
+    <router-outlet></router-outlet>
+  </div>
 
-<!--  <div class="bottom-panel">-->
-<!--&lt;!&ndash;    <app-audio-player></app-audio-player>&ndash;&gt;-->
-<!--  </div>-->
-<!--  -->
-  <app-login></app-login>
+  <div class="bottom-panel">
+    <app-audio-player></app-audio-player>
+  </div>
 
 </div>
 
@@ -21,4 +19,4 @@
   <app-alert></app-alert>
 </div>
 
-<router-outlet></router-outlet>
+

@@ -1,6 +1,8 @@
   export interface Profil {
     sessionId: string;
     email: string;
+    lastName: string;
+    firstName: string;
   }
 
   export interface LoginRoot {

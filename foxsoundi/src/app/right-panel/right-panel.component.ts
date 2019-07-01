@@ -8,20 +8,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class RightPanelComponent implements OnInit {
 
-  E_DisplayType: typeof E_DisplayType = E_DisplayType;
-  type: E_DisplayType;
-
-  constructor(public route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params): void => {
-      this.type = params.type == null ? E_DisplayType.list : params.type ;
-      console.log(this.type);
-    });
   }
 
 
-}
-enum E_DisplayType {
-  list, grid
 }

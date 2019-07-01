@@ -1,6 +1,3 @@
-<div class="container" [ngSwitch]="type">
-  <app-grid *ngSwitchCase="E_DisplayType.grid"></app-grid>
-  <app-list *ngSwitchCase="E_DisplayType.list"></app-list>
-  <p *ngSwitchDefault>Structure inconnue</p>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

@@ -4,8 +4,8 @@ import { AlbumComponent } from "./right-panel/grid/album/album.component";
 import { PlaylistComponent } from "./right-panel/grid/playlist/playlist.component";
 import { ArtistComponent } from "./right-panel/list/artist/artist.component";
 import {TrackComponent} from "./right-panel/list/track/track.component";
-import {SigninComponent} from "./login/signin/signin.component";
-import {SignupComponent} from "./login/signup/signup.component";
+import {SigninComponent} from "./right-panel/login/signin/signin.component";
+import {SignupComponent} from "./right-panel/login/signup/signup.component";
 
 const routes: Routes = [
   { path: '', component: AlbumComponent },

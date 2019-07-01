@@ -5,21 +5,22 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AudioPlayerComponent } from './audio-player/audio-player.component';
+import { AudioPlayerComponent } from './bottom-panel/audio-player/audio-player.component';
 import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
 import { SpotifyService } from './services/spotify.service';
 import { GridComponent } from './right-panel/grid/grid.component';
 import { ListComponent } from './right-panel/list/list.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './right-panel/login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SigninComponent } from './login/signin/signin.component';
-import { SignupComponent } from './login/signup/signup.component';
+import { SigninComponent } from './right-panel/login/signin/signin.component';
+import { SignupComponent } from './right-panel/login/signup/signup.component';
 import { AlbumComponent } from './right-panel/grid/album/album.component';
 import { PlaylistComponent } from './right-panel/grid/playlist/playlist.component';
 import { TrackComponent } from './right-panel/list/track/track.component';
 import { ArtistComponent } from './right-panel/list/artist/artist.component';
+import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ArtistComponent } from './right-panel/list/artist/artist.component';
     AlbumComponent,
     PlaylistComponent,
     TrackComponent,
-    ArtistComponent
+    ArtistComponent,
+    BottomPanelComponent
   ],
   imports: [
     BrowserModule,

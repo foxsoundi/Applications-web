@@ -15,11 +15,13 @@
 
   <script src="https://sdk.scdn.co/spotify-player.js"></script>
   <script>
+    const token = 'BQB52M2K8cRcFyCoiCtcIYXNflz4EL62QFYyKXkBfn_-jkrIcmUhq0L2rNIPrC6wjWZ4fKRPNz9u0_IwcDU0BP_hOtZFpDNj2ESb4FqfNsjcleVDiBzwH-aUUapPwzZz3WctgwSXtL-EfkdC4k5N0_dLmf5Py9iU3KaZeKf2S7OqOru3dEm5UGnoL2OE';
+
     window.onSpotifyWebPlaybackSDKReady = () => {
-      const token = '6ffd5e7a524ac1b964a14d2a37a3a8ed1bf10a6c2fa8351e1a6bed63e2e91224';
       const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
-        getOAuthToken: cb => { cb(token); }
+        name: 'Foxsoundi Player',
+        getOAuthToken: cb => { cb(token); },
+        volume: 0.8
       });
 
       // Error handling
@@ -42,8 +44,30 @@
       });
 
       // Connect to the player!
-      player.connect();
+      player.connect().then(success => {
+        if (success) {
+          console.log('The Web Playback SDK successfully connected to Spotify!');
+        }
+      });
+
+
+
+
+      fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
+          method: 'PUT',
+          body: JSON.stringify({ uris: ['spotify:track:4MhTFsyqIJnjsOweVcU8ug'] }),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+        },
+        console.log("je suis dans le play"));
     };
+
+
+
+
+
   </script>
 </head>
 

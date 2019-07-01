@@ -26,54 +26,27 @@ export class SpotifyService {
 
   getGenre(): void {
     this.http.get<GenresRawRoot>(this.URI + '/v1/music/genre')
-      .subscribe(result => {
-        this.genresRawRoot = result;
-        console.log(this.genresRawRoot);
-      },
-      console.error
-      );
+      .subscribe(result => { this.genresRawRoot = result }, console.error );
   }
 
   getPlaylistOfGenre(idGenre: string): void {
     this.http.get<PlaylistsRawRoot>(this.URI + '/v1/music/genre/' + idGenre + '/playlists')
-      .subscribe(result => {
-          this.playlistsRawRoot = result;
-          console.log(this.playlistsRawRoot);
-          },
-        console.error
-      );
+      .subscribe(result => { this.playlistsRawRoot = result }, console.error );
   }
 
   getTrackOfPlaylist(idPlaylist: string): void {
     this.http.get<TracksRawRoot>(this.URI + '/v1/music/playlist/' + idPlaylist + '/tracks')
-      .subscribe(result => {
-          this.tracksRawRoot = result;
-          console.log(this.playlistsRawRoot);
-        },
-        console.error
-      );
+      .subscribe(result => { this.tracksRawRoot = result }, console.error );
   }
 
   serverIsOk(): void {
     this.http.get<boolean>(this.URI + '/ping')
-      .subscribe(result => {
-          this.serverOK = result;
-          console.log(this.serverOK);
-          },
-        console.error
-      );
+      .subscribe(result => { this.serverOK = result }, console.error );
   }
 
   // Error handling
   handleError(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Get client-side error
-      errorMessage = error.error.message;
-    } else {
-      // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
+    let errorMessage = (error.error instanceof ErrorEvent ? error.error.message : `Error Code: ${error.status}\nMessage: ${error.message}`);
     window.alert(errorMessage);
     return throwError(errorMessage);
   }

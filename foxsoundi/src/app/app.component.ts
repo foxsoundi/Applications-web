@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SpotifyService } from './services/spotify.service';
+import { Component, ElementRef, ViewChild} from '@angular/core';
+import { SpotifyService} from './services/spotify.service';
 
 @Component({
   selector: 'app-root',

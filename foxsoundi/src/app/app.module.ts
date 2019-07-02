@@ -24,6 +24,7 @@ import { YoutubePlayerComponent } from './bottom-panel/youtube-player/youtube-pl
 import { NgxYoutubePlayerModule } from "ngx-youtube-player";
 import {MatSliderModule} from "@angular/material";
 import {FormsModule} from "@angular/forms";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {FormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     NgxYoutubePlayerModule.forRoot(),
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    DragDropModule
   ],
   providers: [
     SpotifyService,

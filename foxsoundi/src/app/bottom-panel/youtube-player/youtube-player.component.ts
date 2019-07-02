@@ -1,14 +1,16 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {YoutubeService} from "../../services/youtube.service";
 
 @Component({
   selector: 'app-youtube-player',
   templateUrl: './youtube-player.component.html',
   styleUrls: ['./youtube-player.component.css']
 })
+
 export class YoutubePlayerComponent implements OnInit {
 
-  id = 'e1wbWhMOCaQ';
-  playerVars = { cc_lang_pref: 'fr' };
+  public id = this.youtubeService.idVideo.videoId;
+  public playerVars = { cc_lang_pref: 'fr' };
   private player;
   private ytEvent;
 
@@ -19,15 +21,33 @@ export class YoutubePlayerComponent implements OnInit {
   private control;
   private volumeSlide;
   private volumeIcon;
-  private videoHeight = 0; //1
-  private videoWidth = 0; //1
+  private videoHeight = 70; //1
+  private videoWidth = 90; //1
 
-  constructor() { }
+  constructor(public youtubeService: YoutubeService){
+    this.youtubeService.listen().subscribe((m:any) => {
+      console.log(m);
+      // this.onFilterClick(m);
+      this.loadVideo();
+    })
+  }
+
+  onFilterClick(event) {
+    console.log('Fire onFilterClick: ', event);
+  }
 
   ngOnInit(): void {
     this.control = this.audioControl.nativeElement;
     this.volumeSlide = this.audioVolumeSlide.nativeElement;
     this.volumeIcon = this.audioVolumeIcon.nativeElement;
+  }
+
+  ngDoCheck(){
+    this.id = this.youtubeService.idVideo.videoId;
+  }
+
+  loadVideo() {
+    this.player.loadVideoById(this.id);
   }
 
   onStateAudioChange(event) {
@@ -77,11 +97,6 @@ export class YoutubePlayerComponent implements OnInit {
     } else {
       this.volumeIcon.textContent = 'volume_down';
     }
-
-  }
-
-  getVolumeVideo(): number {
-    return this.player.getVolume();
   }
 
 }

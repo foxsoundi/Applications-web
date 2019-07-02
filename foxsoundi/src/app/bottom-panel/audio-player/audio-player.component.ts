@@ -5,6 +5,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
   templateUrl: './audio-player.component.html',
   styleUrls: ['./audio-player.component.css']
 })
+
 export class AudioPlayerComponent implements OnInit {
 
   constructor() { }

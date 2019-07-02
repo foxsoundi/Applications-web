@@ -22,6 +22,8 @@ import { ArtistComponent } from './right-panel/list/artist/artist.component';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 import { YoutubePlayerComponent } from './bottom-panel/youtube-player/youtube-player.component';
 import { NgxYoutubePlayerModule } from "ngx-youtube-player";
+import {MatSliderModule} from "@angular/material";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { NgxYoutubePlayerModule } from "ngx-youtube-player";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxYoutubePlayerModule.forRoot()
+    NgxYoutubePlayerModule.forRoot(),
+    MatSliderModule,
+    FormsModule
   ],
   providers: [
     SpotifyService,

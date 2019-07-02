@@ -12,59 +12,6 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <script src="https://sdk.scdn.co/spotify-player.js"></script>
-  <script>
-    const token = 'BQDRFPTxuXMWrXIQxIrlzcf_FZIfnOH9wmwOdbTohBy7h9e2EifW6DBwiOAzDQo8jhs2PPSJwyRTPyjoIfHiIjepkiILGyonax0vKmBpvsoHpxsVeeOi_5F3dUQDvaG4djCPu4IgOc-if1R_KgjrCVs5f1rQVNugMwxLodmdAgFdJspZWf-sa0amt2bV';
-
-    window.onSpotifyWebPlaybackSDKReady = () => {
-      const player = new Spotify.Player({
-        name: 'Foxsoundi Player',
-        getOAuthToken: cb => { cb(token); },
-        volume: 0.8
-      });
-
-      // Error handling
-      player.addListener('initialization_error', ({ message }) => { console.error(message); });
-      player.addListener('authentication_error', ({ message }) => { console.error(message); });
-      player.addListener('account_error', ({ message }) => { console.error(message); });
-      player.addListener('playback_error', ({ message }) => { console.error(message); });
-
-      // Playback status updates
-      player.addListener('player_state_changed', state => { console.log(state); });
-
-      // Ready
-      player.addListener('ready', ({ device_id }) => {
-        console.log('Ready with Device ID', device_id);
-      });
-
-      // Not Ready
-      player.addListener('not_ready', ({ device_id }) => {
-        console.log('Device ID has gone offline', device_id);
-      });
-
-      // Connect to the player!
-      player.connect().then(success => {
-        if (success) {
-          console.log('The Web Playback SDK successfully connected to Spotify!');
-        }
-      });
-
-
-
-
-      fetch(`https://api.spotify.com/v1/me/player/play?device_id=${device_id}`, {
-          method: 'PUT',
-          body: JSON.stringify({ uris: ['spotify:track:4MhTFsyqIJnjsOweVcU8ug'] }),
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          },
-        },
-        console.log("je suis dans le play"));
-    };
-
-  </script>
 </head>
 
 <body>

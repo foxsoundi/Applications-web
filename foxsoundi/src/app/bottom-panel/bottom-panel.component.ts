@@ -9,7 +9,6 @@ export class BottomPanelComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

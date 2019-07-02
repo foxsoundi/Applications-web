@@ -37,14 +37,14 @@ a:hover {
 .right-panel {
   float: left;
   width: calc(100% - 190px);
-  max-height: calc(100vh - 65px);;
+  max-height: calc(100vh - 70px);;
   overflow-y: scroll;
   right: 0;
   top: 0;
 }
 
 .bottom-panel {
-  min-height: 65px;
+  max-height: 70px;
   width: 100%;
   position: fixed;
   left: 0;

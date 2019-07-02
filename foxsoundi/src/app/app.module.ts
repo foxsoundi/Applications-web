@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_BASE_HREF } from '@angular/common';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AudioPlayerComponent } from './bottom-panel/audio-player/audio-player.component';
@@ -21,6 +20,11 @@ import { PlaylistComponent } from './right-panel/grid/playlist/playlist.componen
 import { TrackComponent } from './right-panel/list/track/track.component';
 import { ArtistComponent } from './right-panel/list/artist/artist.component';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
+import { YoutubePlayerComponent } from './bottom-panel/youtube-player/youtube-player.component';
+import { NgxYoutubePlayerModule } from "ngx-youtube-player";
+import {MatSliderModule} from "@angular/material";
+import {FormsModule} from "@angular/forms";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -38,13 +42,18 @@ import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
     PlaylistComponent,
     TrackComponent,
     ArtistComponent,
-    BottomPanelComponent
+    BottomPanelComponent,
+    YoutubePlayerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxYoutubePlayerModule.forRoot(),
+    MatSliderModule,
+    FormsModule,
+    DragDropModule
   ],
   providers: [
     SpotifyService,

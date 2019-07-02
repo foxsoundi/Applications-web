@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div *ngIf=!spotifyService.serverOK>
+
   <div class="left-panel">
     <app-left-panel></app-left-panel>
   </div>
@@ -10,13 +11,14 @@
   </div>
 
   <div class="bottom-panel">
-    <app-audio-player></app-audio-player>
+    <app-youtube-player></app-youtube-player>
   </div>
 
 </div>
 
 <div *ngIf="spotifyService.serverOK">
-  <app-alert></app-alert>
-</div>
 
+  <app-alert></app-alert>
+
+</div>
 

@@ -1,0 +1,20 @@
+<!--<div class="container">-->
+  <div class="row">
+    <div class="col-1">
+      <div class="drag-box background-none" cdkDrag>
+        <youtube-player [videoId]="id" (ready)="savePlayer($event)" (change)="onStateAudioChange($event)" [playerVars]="playerVars" [height]="videoHeight" [width]="videoWidth"></youtube-player>
+      </div>
+    </div>
+    <div class="col">
+
+      <i #audioControl class="material-icons pointer" (click)="switchPlayerState()">play_arrow</i>
+
+      <i #audioVolumeIcon class="material-icons">volume_up</i>
+
+      <input #audioVolumeSlide class="custom-range" type="range" min="0" max="100" value="100" (change)="onStateChange()">
+
+    </div>
+  </div>
+<!--</div>-->
+
+

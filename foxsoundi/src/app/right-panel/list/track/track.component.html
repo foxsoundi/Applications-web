@@ -12,7 +12,7 @@
   <tbody>
   <tr *ngFor="let trackRaw of theTrack.items ; index as i">
     <td>{{i + 1}}</td>
-    <td><i class="material-icons pointer">play_circle_outline</i></td>
+    <td><i class="material-icons pointer" (click)="playAudio(trackRaw.track.name + ' ' + trackRaw.track.artists[0].name)">play_circle_outline</i></td>
     <td>{{trackRaw.track.name}} <i *ngIf="trackRaw.track.explicit" class='material-icons'>explicit</i></td>
     <td><span *ngFor="let artist of trackRaw.track.artists ; index as i"><a [attr.href]="">{{artist.name}}</a>{{trackRaw.track.artists.length == i + 1 ? "" : " & "}}</span></td>
     <td><a [attr.href]="">{{trackRaw.track.album.name}}</a></td>

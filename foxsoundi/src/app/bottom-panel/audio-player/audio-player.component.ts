@@ -1,4 +1,5 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import * as test from 'youtube-audio-stream'
 
 @Component({
   selector: 'app-audio-player',
@@ -60,5 +61,25 @@ export class AudioPlayerComponent implements OnInit {
     progress.style.width = percent + '%';
     // progress.textContent = percent + '%';
   }
+
+
+
+  testMethod(){
+    console.log("TEST");
+    console.log(test);
+
+    // var youtubeStream = require('youtube-audio-stream');
+    var getAudio = function (req, res) {
+      var requestUrl = 'http://youtube.com/watch?v=' + req.params.videoId;
+      console.log("TEST2");
+      console.log(requestUrl);
+      try {
+        test(requestUrl).pipe(res)
+      } catch (exception) {
+        res.status(500).send(exception)
+      }
+    }
+  }
+
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { GenresRawRoot } from '../lib/genreRaw';
 import { PlaylistsRawRoot } from '../lib/playlistRaw';
 import { TracksRawRoot } from '../lib/trackRaw';
@@ -12,35 +12,29 @@ import { TracksRawRoot } from '../lib/trackRaw';
 export class SpotifyService {
 
   genresRawRoot: GenresRawRoot;
-  playlistsRawRoot: PlaylistsRawRoot;
-  tracksRawRoot: TracksRawRoot;
   serverOK = false;
   URI = 'https://foxsoundi2.azurewebsites.net';
 
   constructor(private http: HttpClient) {
     this.getGenre();
     this.serverIsOk();
-    this.getPlaylistOfGenre('rock');
-    this.getTrackOfPlaylist('37i9dQZF1DX8FwnYE6PRvL');
 }
 
   getGenre(): void {
-    this.http.get<GenresRawRoot>(this.URI + '/v1/music/genre')
+    this.http.get<GenresRawRoot>(`${this.URI}/v1/music/genre`)
       .subscribe(result => { this.genresRawRoot = result }, console.error );
   }
 
-  getPlaylistOfGenre(idGenre: string): void {
-    this.http.get<PlaylistsRawRoot>(this.URI + '/v1/music/genre/' + idGenre + '/playlists')
-      .subscribe(result => { this.playlistsRawRoot = result }, console.error );
+  getPlaylistOfGenre(idGenre: string): Observable<PlaylistsRawRoot> {
+    return this.http.get<PlaylistsRawRoot>(`${this.URI}/v1/music/genre/${idGenre}/playlists`);
   }
 
-  getTrackOfPlaylist(idPlaylist: string): void {
-    this.http.get<TracksRawRoot>(this.URI + '/v1/music/playlist/' + idPlaylist + '/tracks')
-      .subscribe(result => { this.tracksRawRoot = result }, console.error );
+  getTrackOfPlaylist(idPlaylist: string): Observable<TracksRawRoot> {
+    return this.http.get<TracksRawRoot>(`${this.URI}/v1/music/playlist/${idPlaylist}/tracks`);
   }
 
   serverIsOk(): void {
-    this.http.get<boolean>(this.URI + '/ping')
+    this.http.get<boolean>(`${this.URI}/ping`)
       .subscribe(result => { this.serverOK = result }, console.error );
   }
 

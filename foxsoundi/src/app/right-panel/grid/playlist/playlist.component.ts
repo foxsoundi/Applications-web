@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SpotifyService} from "../../../services/spotify.service";
-import {Router} from "@angular/router";
+import { SpotifyService } from "../../../services/spotify.service";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { PlaylistsRawRoot } from "../../../lib/playlistRaw";
 
 @Component({
   selector: 'app-playlist',
@@ -9,11 +10,21 @@ import {Router} from "@angular/router";
 })
 export class PlaylistComponent implements OnInit {
 
-  constructor(public spotifyService: SpotifyService, public router: Router) { }
+  thePlaylist: PlaylistsRawRoot;
+  idGenre: string;
 
-  ngOnInit() { }
+  constructor(public spotifyService: SpotifyService, public route: ActivatedRoute, public router: Router) { }
+
+  ngOnInit() {
+    this.route.params
+      .subscribe(params => this.idGenre = params.idAlbum);
+
+    this.spotifyService.getPlaylistOfGenre(this.idGenre)
+      .subscribe(list => this.thePlaylist = list);
+  }
 
   handleClick(str: string) {
     this.router.navigate(['/track/' + str]);
   }
+
 }

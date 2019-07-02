@@ -25,4 +25,9 @@ export class LeftPanelComponent implements OnInit {
   goSignup() {
     this.router.navigate(['/signup']);
   }
+
+  goPlaylist(str: string) {
+    this.router.navigate(['/playlist/' + str]);
+  }
+
 }

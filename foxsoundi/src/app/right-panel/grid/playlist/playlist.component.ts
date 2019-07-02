@@ -23,6 +23,29 @@ export class PlaylistComponent implements OnInit {
       .subscribe(list => this.thePlaylist = list);
   }
 
+  ngDoCheck() {
+
+  }
+
+  ngAfterContentInit() {
+
+  }
+  ngAfterContentChecked() {
+
+  }
+
+  ngAfterViewInit() {
+
+  }
+
+  ngAfterViewChecked() {
+
+  }
+
+  ngOnDestroy() {
+
+  }
+
   handleClick(str: string) {
     this.router.navigate(['/track/' + str]);
   }

@@ -8,7 +8,7 @@ import {LoginService} from '../../services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  logoMarque  = 'assets/img/foxsoundi.png';
+
 
   constructor(login: LoginService) { }
 

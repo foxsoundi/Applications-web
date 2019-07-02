@@ -7,7 +7,7 @@ import {LoginService} from '../../../services/login.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
+  logoMarque  = 'assets/img/foxsoundi.png';
   constructor(public login: LoginService) { }
 
   ngOnInit() {

@@ -1,36 +1,54 @@
-<form>
+<div class="container">
+  <div class="row">
+    <div class="col">
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="example@example.com" required>
-    <small id="emailHelp" class="form-text text-muted">
-      Ne partagez jamais votre email avec n'importe qui.
-    </small>
-  </div>
+      <div class="text-center">
+        <img src="{{logoMarque}}" alt="" class="float-center">
+      </div>
 
-  <label for="InputPassword1">Mot de passe</label>
-  <div class="input-group mb-2">
-    <input type="password" class="form-control" id="InputPassword1" aria-label="Small" aria-describedby="inputGroup-sizing" placeholder="**********">
-    <div class="input-group-append">
-      <a class="input-group-text material-icons text-black-50" id="inputGroup-sizing">visibility</a> <!-- _off -->
+      <form>
+
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputFirstName" aria-describedby="firstNameHelp" placeholder="Prénom" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputLastName" aria-describedby="lastNameHelp" placeholder="Nom" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputEmai1" aria-describedby="emailHelp" placeholder="Adresse électronique" required>
+          <small id="emailHelp" class="form-text text-muted">
+            Ne partagez jamais votre email avec n'importe qui.
+          </small>
+        </div>
+
+        <div class="input-group mb-2">
+          <input type="password" class="form-control" id="inputPassword" aria-label="Small" aria-describedby="inputGroup-sizing" placeholder="Mot de passe">
+          <div class="input-group-append">
+            <a class="input-group-text material-icons text-black-50" id="inputGroup-sizing">visibility</a> <!-- _off -->
+          </div>
+        </div>
+
+        <div class="input-group mb-2">
+          <input type="password" class="form-control" id="inputPasswordRepeat" aria-label="Small" aria-describedby="repeatInputGroup-sizing" placeholder="Confirmation mot de passe">
+          <div class="input-group-append">
+            <a class="input-group-text material-icons text-black-50" id="repeatInputGroup-sizing">visibility</a> <!-- _off -->
+          </div>
+        </div>
+
+        <small class="form-text text-muted mb-2">
+          Votre mot de passe doit contenir plus de 8 caractères, un mélange de lettre et de chiffre ainsi que des caractères spéciaux.
+        </small>
+
+        <div class="form-check mb-2">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">J'accepte les conditions</label>
+        </div>
+
+        <button type="submit" class="btn btn-success mb-2">S'inscrire</button>
+      </form>
+      <span>Vous avez déjà un compte ? <a (click)="goSignin()">Connexion</a></span>
     </div>
   </div>
-
-  <label for="InputPassword1">Répéter mot de passe</label>
-  <div class="input-group mb-2">
-    <input type="password" class="form-control" id="repeatInputPassword1" aria-label="Small" aria-describedby="repeatInputGroup-sizing" placeholder="**********">
-    <div class="input-group-append">
-      <a class="input-group-text material-icons text-black-50" id="repeatInputGroup-sizing">visibility</a> <!-- _off -->
-    </div>
-  </div>
-  <small class="form-text text-muted mb-2">
-    Votre mot de passe doit contenir plus de 8 caractères, un mélange de lettre et de chiffre ainsi que des caractères spéciaux.
-  </small>
-
-  <div class="form-check mb-2">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Accepter les conditions</label>
-  </div>
-
-  <button type="submit" class="btn btn-success mb-2">S'inscrire</button>
-</form>
+</div>

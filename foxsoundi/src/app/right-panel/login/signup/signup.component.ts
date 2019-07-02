@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
+  logoMarque  = 'assets/img/foxsoundi.png';
+  constructor(public router: Router) { }
 
   ngOnInit() {
+  }
+
+  goSignin() {
+    this.router.navigate(['/signin']);
   }
 
 }

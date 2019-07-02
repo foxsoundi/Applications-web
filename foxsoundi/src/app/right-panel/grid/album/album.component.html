@@ -1,11 +1,19 @@
-<div class="col-3 grid-item" (click)="handleClick(genreRaw.id)" *ngFor="let genreRaw of spotifyService.genresRawRoot.categories.items">
-  <div *ngIf="genreRaw.id != 'toplists'">
-    <div class="grid-item-top">
-      <img [attr.src]="genreRaw.icons[0].url" alt="">
+<div class="container">
+  <div class="row">
+
+    <div *ngFor="let genreRaw of spotifyService.genresRawRoot.categories.items">
+      <div class="grid-item" (click)="handleClick(genreRaw.id)" *ngIf="genreRaw.id != 'toplists'">
+
+          <div class="grid-item-top">
+            <img [attr.src]="genreRaw.icons[0].url" alt="">
+          </div>
+
+          <div class="grid-item-bot">
+            <a href="" [text]=genreRaw.name></a>
+          </div>
+
+      </div>
     </div>
 
-    <div class="grid-item-bot">
-      <a href="" [text]=genreRaw.name></a>
-    </div>
   </div>
 </div>

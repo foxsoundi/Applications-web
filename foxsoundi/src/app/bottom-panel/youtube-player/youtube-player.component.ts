@@ -21,8 +21,8 @@ export class YoutubePlayerComponent implements OnInit {
   private control;
   private volumeSlide;
   private volumeIcon;
-  private videoHeight = 70; //1
-  private videoWidth = 90; //1
+  public videoHeight = 70; //1
+  public videoWidth = 90; //1
 
   constructor(public youtubeService: YoutubeService){
     this.youtubeService.listen().subscribe((m:any) => {

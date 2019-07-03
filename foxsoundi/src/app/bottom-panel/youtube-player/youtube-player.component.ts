@@ -1,5 +1,5 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {YoutubeService} from "../../services/youtube.service";
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { YoutubeService } from "../../services/youtube.service";
 
 @Component({
   selector: 'app-youtube-player',
@@ -27,7 +27,6 @@ export class YoutubePlayerComponent implements OnInit {
   constructor(public youtubeService: YoutubeService){
     this.youtubeService.listen().subscribe((m:any) => {
       console.log(m);
-      // this.onFilterClick(m);
       this.loadVideo();
     })
   }

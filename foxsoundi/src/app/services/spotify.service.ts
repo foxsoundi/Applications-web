@@ -38,7 +38,6 @@ export class SpotifyService {
       .subscribe(result => { this.serverOK = result }, console.error );
   }
 
-  // Error handling
   handleError(error) {
     let errorMessage = (error.error instanceof ErrorEvent ? error.error.message : `Error Code: ${error.status}\nMessage: ${error.message}`);
     window.alert(errorMessage);

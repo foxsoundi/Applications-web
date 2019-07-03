@@ -4,11 +4,7 @@
     <div class="grid-item" (click)="handleClick(playlistRaw.id)" *ngFor="let playlistRaw of thePlaylist.playlists.items">
 
       <div class="grid-item-top">
-        <img [attr.src]="playlistRaw.images[0].url" alt="">
-      </div>
-
-      <div class="grid-item-bot">
-        <a href="" [text]="playlistRaw.name"></a>
+        <img [attr.src]="playlistRaw.images[0].url" [attr.alt]="playlistRaw.name" [attr.title]="playlistRaw.name">
       </div>
 
     </div>

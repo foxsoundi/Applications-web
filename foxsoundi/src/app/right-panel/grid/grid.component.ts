@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-grid',

@@ -22,9 +22,9 @@ import { ArtistComponent } from './right-panel/list/artist/artist.component';
 import { BottomPanelComponent } from './bottom-panel/bottom-panel.component';
 import { YoutubePlayerComponent } from './bottom-panel/youtube-player/youtube-player.component';
 import { NgxYoutubePlayerModule } from "ngx-youtube-player";
-import {MatSliderModule} from "@angular/material";
-import {FormsModule} from "@angular/forms";
-import {DragDropModule} from "@angular/cdk/drag-drop";
+import { MatSliderModule } from "@angular/material";
+import { FormsModule } from "@angular/forms";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [

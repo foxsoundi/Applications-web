@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './bottom-panel.component.html',
   styleUrls: ['./bottom-panel.component.css']
 })
+
 export class BottomPanelComponent implements OnInit {
 
   constructor() { }

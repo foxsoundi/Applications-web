@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-audio-player',
@@ -18,9 +18,6 @@ export class AudioPlayerComponent implements OnInit {
   @ViewChild('audioVolumeSlide') audioVolumeSlide: ElementRef;
 
   ngOnInit() { }
-  /*toggleAudio() {
-    this.audioplayer.nativeElement.play();
-  }*/
 
   play() {
     const player = this.audioPlayer.nativeElement;
@@ -51,15 +48,14 @@ export class AudioPlayerComponent implements OnInit {
 
   update() {
     const player = this.audioPlayer.nativeElement;
-    const duration = player.duration;    // Durée totale
-    const time     = player.currentTime; // Temps écoulé
+    const duration = player.duration;
+    const time     = player.currentTime;
     const fraction = time / duration;
     const percent  = Math.ceil(fraction * 100);
 
     const progress = this.audioProgressBar.nativeElement;
 
     progress.style.width = percent + '%';
-    // progress.textContent = percent + '%';
   }
 
 }

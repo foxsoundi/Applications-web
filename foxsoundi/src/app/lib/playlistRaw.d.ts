@@ -1,4 +1,3 @@
-// https://foxsoundi2.azurewebsites.net/v1/music/genre/rock/playlists
 
   export interface ExternalUrls {
     spotify: string;

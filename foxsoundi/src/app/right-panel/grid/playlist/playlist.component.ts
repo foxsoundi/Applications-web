@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from "../../../services/spotify.service";
-import { ActivatedRoute, Params, Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { PlaylistsRawRoot } from "../../../lib/playlistRaw";
 
 @Component({
@@ -8,6 +8,7 @@ import { PlaylistsRawRoot } from "../../../lib/playlistRaw";
   templateUrl: './playlist.component.html',
   styleUrls: ['./playlist.component.css']
 })
+
 export class PlaylistComponent implements OnInit {
 
   thePlaylist: PlaylistsRawRoot;
@@ -21,29 +22,6 @@ export class PlaylistComponent implements OnInit {
 
     this.spotifyService.getPlaylistOfGenre(this.idGenre)
       .subscribe(list => this.thePlaylist = list);
-  }
-
-  ngDoCheck() {
-
-  }
-
-  ngAfterContentInit() {
-
-  }
-  ngAfterContentChecked() {
-
-  }
-
-  ngAfterViewInit() {
-
-  }
-
-  ngAfterViewChecked() {
-
-  }
-
-  ngOnDestroy() {
-
   }
 
   handleClick(str: string) {

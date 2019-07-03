@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-right-panel',
@@ -10,8 +9,6 @@ export class RightPanelComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 
 }

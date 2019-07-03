@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css']
 })
+
 export class AlbumComponent implements OnInit {
 
   constructor(public spotifyService: SpotifyService, public router: Router) { }

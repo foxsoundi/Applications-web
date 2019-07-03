@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SpotifyService } from "../../../services/spotify.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { TracksRawRoot } from "../../../lib/trackRaw";
@@ -9,6 +9,7 @@ import { YoutubeService } from "../../../services/youtube.service";
   templateUrl: './track.component.html',
   styleUrls: ['./track.component.css']
 })
+
 export class TrackComponent implements OnInit {
 
   theTrack: TracksRawRoot;

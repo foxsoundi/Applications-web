@@ -25,6 +25,7 @@ import { NgxYoutubePlayerModule } from "ngx-youtube-player";
 import { MatSliderModule } from "@angular/material";
 import { FormsModule } from "@angular/forms";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { MinuteSecondsPipePipe } from './minute-seconds-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
     ArtistComponent,
     BottomPanelComponent,
     YoutubePlayerComponent,
+    MinuteSecondsPipePipe,
   ],
   imports: [
     BrowserModule,

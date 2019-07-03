@@ -1,16 +1,46 @@
   <div class="row">
+
     <div class="col-1">
       <div class="drag-box background-none" cdkDrag>
         <youtube-player [videoId]="id" (ready)="savePlayer($event)" (change)="onStateAudioChange($event)" [playerVars]="playerVars" [height]="videoHeight" [width]="videoWidth"></youtube-player>
       </div>
     </div>
-    <div class="col">
 
-      <i #audioControl class="material-icons pointer" (click)="switchPlayerState()">play_arrow</i>
+    <div class="col align-self-center">
 
-      <i #audioVolumeIcon class="material-icons">volume_up</i>
+      <div class="row justify-content-center">
 
-      <input #audioVolumeSlide class="custom-range" type="range" min="0" max="100" value="100" (change)="onStateChange()">
+        <div class="col-2 align-self-center">
+<!--          <i class="material-icons pointer">skip_previous</i>-->
+          <i class="material-icons pointer" (click)="setCurrentTime(getAudioCurrentTime() - 30)" >fast_rewind</i>
+          <i #audioControl class="material-icons pointer" (click)="switchPlayerState()">play_arrow</i>
+          <i class="material-icons pointer" (click)="setCurrentTime(getAudioCurrentTime() + 30)">fast_forward</i>
+<!--          <i class="material-icons pointer">skip_next</i>-->
+        </div>
+
+        <div class="col-2 align-self-center">
+          <i #audioVolumeIcon class="material-icons">volume_up</i>
+          <input #audioVolumeSlide class="custom-range-audio pointer" type="range" min="0" max="100" value="100" (change)="onStateVolumeChange()">
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center">
+
+        <div class="col-1 align-self-center">
+          <span class="">{{getAudioCurrentTime() | minuteSecondsPipe}}</span>
+        </div>
+
+        <div class="col-8 align-self-center">
+          <input #audioTimeSlide class="custom-range" type="range" [attr.min]="0" [attr.max]="getAudioEndTime()" (change)="onStateTimeChange()">
+        </div>
+
+        <div class="col-1 align-self-center">
+          <span class="">{{getAudioEndTime() | minuteSecondsPipe}}</span>
+        </div>
+
+      </div>
 
     </div>
+
   </div>

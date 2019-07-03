@@ -1,4 +1,3 @@
-//fetch("https://foxsoundiapi.azurewebsites.net/v1/genres")
 
   export interface Icon {
     height?: number;

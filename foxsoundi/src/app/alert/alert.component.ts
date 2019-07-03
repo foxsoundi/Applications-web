@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css']
 })
+
 export class AlertComponent implements OnInit {
 
   constructor() { }

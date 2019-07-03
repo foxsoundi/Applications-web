@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {VideoRootRaw} from "../lib/videoRaw";
-import {Observable, Subject} from "rxjs";
+import { VideoRootRaw } from "../lib/videoRaw";
+import { Observable, Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class YoutubeService {
   private _listners = new Subject<any>();
 
   constructor(private http: HttpClient) {
-    this.idVideo = { videoId: 'e1wbWhMOCaQ' }
+    this.idVideo = { videoId: '' }
   }
 
   setIdVideo(str: string): void {

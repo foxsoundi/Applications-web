@@ -1,3 +1,4 @@
+
   export interface Profil {
     sessionId: string;
     email: string;
@@ -9,7 +10,6 @@
     isLoggedIn: number;
     profil: Profil;
   }
-
 
   export interface ConnectInfo {
     email: string;

@@ -6,12 +6,12 @@ import { Router } from "@angular/router";
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
   logoMarque  = 'assets/img/foxsoundi.png';
   constructor(public router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   goSignin() {
     this.router.navigate(['/signin']);

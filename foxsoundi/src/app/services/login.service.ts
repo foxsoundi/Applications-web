@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders
-} from '@angular/common/http';
-import { ConnectInfo, LoginRoot } from '../lib/login';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ConnectInfo, LoginRoot } from '../lib/loginRaw';
 
 const httpOptions = {
   headers: new HttpHeaders({

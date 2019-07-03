@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { YoutubeService } from "../../services/youtube.service";
+import { YoutubeService } from '../../services/youtube.service';
 
 @Component({
   selector: 'app-youtube-player',
@@ -13,22 +13,26 @@ export class YoutubePlayerComponent implements OnInit {
   public playerVars = { cc_lang_pref: 'fr' };
   private player;
   private ytEvent;
+  private currentTime = 0.0;
+  private endTime = 0.0;
 
   @ViewChild('audioVolumeSlide') audioVolumeSlide: ElementRef;
   @ViewChild('audioVolumeIcon') audioVolumeIcon: ElementRef;
   @ViewChild('audioControl') audioControl: ElementRef;
+  @ViewChild('audioTimeSlide') audioTimeSlide: ElementRef;
 
   private control;
   private volumeSlide;
   private volumeIcon;
-  public videoHeight = 70; //1
-  public videoWidth = 90; //1
+  private timeSlide;
+  public videoHeight = 70; // 1
+  public videoWidth = 90; // 1
 
-  constructor(public youtubeService: YoutubeService){
-    this.youtubeService.listen().subscribe((m:any) => {
+  constructor(public youtubeService: YoutubeService) {
+    this.youtubeService.listen().subscribe((m: any) => {
       console.log(m);
       this.loadVideo();
-    })
+    });
   }
 
   onFilterClick(event) {
@@ -39,22 +43,25 @@ export class YoutubePlayerComponent implements OnInit {
     this.control = this.audioControl.nativeElement;
     this.volumeSlide = this.audioVolumeSlide.nativeElement;
     this.volumeIcon = this.audioVolumeIcon.nativeElement;
-  }
-
-  ngDoCheck(){
-    this.id = this.youtubeService.idVideo.videoId;
+    this.timeSlide = this.audioTimeSlide.nativeElement;
   }
 
   loadVideo() {
-    this.player.loadVideoById(this.id);
+    this.player.loadVideoById(this.youtubeService.idVideo.videoId);
+    this.control.textContent = 'pause';
   }
 
   onStateAudioChange(event) {
     this.ytEvent = event.data;
   }
 
-  onStateChange() {
+  onStateVolumeChange() {
     this.setVolumeVideo(this.volumeSlide.value);
+  }
+
+  onStateTimeChange() {
+    this.setCurrentTime(this.timeSlide.value);
+    console.log(this.timeSlide.value);
   }
 
   savePlayer(player) {
@@ -81,8 +88,6 @@ export class YoutubePlayerComponent implements OnInit {
   }
 
   setVolumeVideo(volume: number) {
-    console.log("Audio volume => " + volume);
-
     this.player.setVolume(volume);
     this.volumeSlide.value = volume;
     this.setVolumeIconState(volume);
@@ -91,11 +96,22 @@ export class YoutubePlayerComponent implements OnInit {
   setVolumeIconState(volume: number) {
     if (volume <= 0) {
       this.volumeIcon.textContent = 'volume_mute';
-    }else if (volume >= 50) {
+    } else if (volume >= 50) {
       this.volumeIcon.textContent = 'volume_up';
     } else {
       this.volumeIcon.textContent = 'volume_down';
     }
   }
 
+  getAudioCurrentTime(): number {
+    return this.player.getCurrentTime();
+  }
+
+  getAudioEndTime(): number {
+    return this.player.getDuration();
+  }
+
+  setCurrentTime(seconde: number) {
+    this.player.seekTo(seconde, true);
+  }
 }

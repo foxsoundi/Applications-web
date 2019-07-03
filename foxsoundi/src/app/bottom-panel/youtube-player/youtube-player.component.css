@@ -1,3 +1,6 @@
+.vertical-alignement {
+  vertical-align: middle !important;
+}
 
 .custom-range {
   -webkit-appearance: none;
@@ -27,6 +30,38 @@
 .custom-range::-moz-range-thumb {
   width: 5px;
   height: 5px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.custom-range-audio {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 2px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.custom-range-audio:hover {
+  opacity: 1;
+}
+
+.custom-range-audio::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.custom-range-audio::-moz-range-thumb {
+  width: 2px;
+  height: 2px;
   background: #4CAF50;
   cursor: pointer;
 }
